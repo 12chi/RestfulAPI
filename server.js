@@ -22,14 +22,13 @@ app.set('view engine', 'ejs');
 // require mongoose
 var mongoose = require('mongoose');
 // Connect to database
-mongoose.connect('mongodb://localhost/message_board');
+mongoose.connect('mongodb://localhost/Tasks');
 mongoose.Promise = global.Promise;
 
 // create schema and model
 let Schema = mongoose.Schema;
 let TaskSchema = new mongoose.Schema({
     name: { type: String, required: true},
-    action: { type: String}
 }, {timestamps: true});
 
 
