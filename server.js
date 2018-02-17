@@ -52,12 +52,13 @@ app.get('/tasks', function(req, res) {
 
 // get one task
 app.get('/tasks/:id', function(req, res) {
+    console.log("enter get")
     Task.findOne({_id: req.params.id}, function(err, task) {
         if(err) {
             console.log('Error retrieving data');
             res.json({message: "Error", error: err})
         } else { // else console.log that we did well and then redirect to the root route
-            console.log('Successfully deleting a task');
+            console.log('Successfully retrieved a task');
             res.json({message: "Success", data: task});
         }
     })
